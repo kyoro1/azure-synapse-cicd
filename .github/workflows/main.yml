@@ -2,7 +2,7 @@ name: test for synapse integration
 
 on:
   push:
-    branches: [synapse-dev]
+    branches: [main]
 
 jobs:
   validate-synapse-pipeline:

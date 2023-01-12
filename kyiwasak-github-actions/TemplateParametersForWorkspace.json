@@ -4,6 +4,12 @@
 	"parameters": {
 		"workspaceName": {
 			"value": "kyiwasak-github-actions"
+		},
+		"kyiwasak-github-actions-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:kyiwasak-github-actions.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"kyiwasak-github-actions-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://kyiwasaksynapse.dfs.core.windows.net"
 		}
 	}
 }

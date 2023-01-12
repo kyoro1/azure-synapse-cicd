@@ -13,3 +13,4 @@ jobs:
           TargetWorkspaceName: 'kyiwasak-github-actions'
           ArtifactsFolder: './RootFolder'
           operation: 'validate'
+

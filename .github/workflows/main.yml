@@ -1,1 +1,15 @@
+name: test for synapse integration
 
+on:
+  push:
+    branches: [synapse-dev]
+
+jobs:
+  validate-synapse-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Azure/synapse-workspace-deployment
+        with:
+          TargetWorkspaceName: 'kyiwasak-github-actions'
+          ArtifactsFolder: './RootFolder'
+          operation: 'validate'

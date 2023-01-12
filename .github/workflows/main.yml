@@ -11,9 +11,8 @@ jobs:
       - uses: azure/synapse-workspace-deployment@release-1.0
         with:
           TargetWorkspaceName: 'kyiwasak-github-actions'
-#          ArtifactsFolder: './RootFolder'
           TemplateFile: '../../kyiwasak-github-actions/TemplateForWorkspace.json'
-          ParametersFile: './TemplateParametersForWorkspace.json'
+          ParametersFile: '../../kyiwasak-github-actions/TemplateParametersForWorkspace.json'
           environment: 'Azure Public'
           resourceGroup: 'kyiwasakSynapse'
           clientId: '1ccb6c14-888e-4cf7-9000-d9f41f03523f'

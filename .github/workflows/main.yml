@@ -20,5 +20,5 @@ jobs:
           clientSecret: 'Mne8Q~EAkiaaAiW2hdgm5OhpTxrglHaHxeah3b6f'
           subscriptionId: 'e9b02ef2-7153-4301-9716-f2f328b39811'
           tenantId: '2c07d0a7-0d73-4574-a9c5-277f9cda9bb4'
-          operation: 'validate'
+          
 

@@ -11,11 +11,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: azure/synapse-workspace-deployment@release-1.0
         with:
-          TargetWorkspaceName: 'kyiwasak-github-actions'
+          TargetWorkspaceName: 'kyiwasak-github-actions-123'
           TemplateFile: ./kyiwasak-github-actions/TemplateForWorkspace.json
           ParametersFile: ./kyiwasak-github-actions/TemplateParametersForWorkspace.json
           environment: 'Azure Public'
-          resourceGroup: 'kyiwasakSynapse'
+          resourceGroup: 'kyiwasa-github-actions'
           clientId: '1ccb6c14-888e-4cf7-9000-d9f41f03523f'
           clientSecret: 'Mne8Q~EAkiaaAiW2hdgm5OhpTxrglHaHxeah3b6f'
           subscriptionId: 'e9b02ef2-7153-4301-9716-f2f328b39811'

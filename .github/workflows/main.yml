@@ -2,14 +2,23 @@ name: test for synapse integration
 
 on:
   push:
-    branches: [synapse-dev]
+    branches: [main]
 
 jobs:
   validate-synapse-pipeline:
     runs-on: ubuntu-latest
     steps:
-      - uses: Azure/synapse-workspace-deployment
+      - uses: azure/synapse-workspace-deployment@release-1.0
         with:
           TargetWorkspaceName: 'kyiwasak-github-actions'
-          ArtifactsFolder: './RootFolder'
-          operation: 'validate'
+#          ArtifactsFolder: './RootFolder'
+          TemplateFile: '../../kyiwasak-github-actions/TemplateForWorkspace.json'
+          ParametersFile: './TemplateParametersForWorkspace.json'
+          environment: 'Azure Public'
+          resourceGroup: 'kyiwasakSynapse'
+          clientId: '1ccb6c14-888e-4cf7-9000-d9f41f03523f'
+          clientSecret: 'Mne8Q~EAkiaaAiW2hdgm5OhpTxrglHaHxeah3b6f'
+          subscriptionId: 'e9b02ef2-7153-4301-9716-f2f328b39811'
+          tenantId: '2c07d0a7-0d73-4574-a9c5-277f9cda9bb4'
+          
+

@@ -8,7 +8,7 @@ jobs:
   validate-synapse-pipeline:
     runs-on: ubuntu-latest
     steps:
-      - uses: Azure/synapse-workspace-deployment
+      - uses: azure/synapse-workspace-deployment@release-1.0
         with:
           TargetWorkspaceName: 'kyiwasak-github-actions'
           ArtifactsFolder: './RootFolder'

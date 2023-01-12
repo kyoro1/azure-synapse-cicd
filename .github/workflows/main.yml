@@ -12,7 +12,7 @@ jobs:
         with:
           TargetWorkspaceName: 'kyiwasak-github-actions'
 #          ArtifactsFolder: './RootFolder'
-          TemplateFile: './TemplateForWorkspace.json'
+          TemplateFile: '../../kyiwasak-github-actions/TemplateForWorkspace.json'
           ParametersFile: './TemplateParametersForWorkspace.json'
           environment: 'Azure Public'
           resourceGroup: 'kyiwasakSynapse'

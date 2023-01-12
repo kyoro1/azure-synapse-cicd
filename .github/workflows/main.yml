@@ -13,7 +13,8 @@ jobs:
         with:
           TargetWorkspaceName: 'kyiwasak-github-actions'
           TemplateFile: '/kyiwasak-github-actions/TemplateForWorkspace.json'
-          ParametersFile: '/kyiwasak-github-actions/TemplateParametersForWorkspace.json'
+#          ParametersFile: '/kyiwasak-github-actions/TemplateParametersForWorkspace.json'
+          ParametersFile: '/kyiwasak-github-actions/TemplateForWorkspace.json'
           environment: 'Azure Public'
           resourceGroup: 'kyiwasakSynapse'
           clientId: '1ccb6c14-888e-4cf7-9000-d9f41f03523f'

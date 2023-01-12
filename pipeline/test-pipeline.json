@@ -1,0 +1,23 @@
+{
+	"name": "test-pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "ppieline_name",
+					"value": true
+				}
+			}
+		],
+		"variables": {
+			"ppieline_name": {
+				"type": "Boolean"
+			}
+		},
+		"annotations": []
+	}
+}

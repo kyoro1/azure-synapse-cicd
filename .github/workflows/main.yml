@@ -7,7 +7,8 @@ on:
 env:
   SUBSCRIPTION_ID: e9b02ef2-7153-4301-9716-f2f328b39811
   TENANT_ID: 2c07d0a7-0d73-4574-a9c5-277f9cda9bb4
-
+  CLIENT_ID: 1ccb6c14-888e-4cf7-9000-d9f41f03523f
+  CLIENT_SECRET: Mne8Q~EAkiaaAiW2hdgm5OhpTxrglHaHxeah3b6f
 
 jobs:
   validate-synapse-pipeline:
@@ -23,8 +24,8 @@ jobs:
           ParametersFile: ./kyiwasak-github-actions/TemplateParametersForWorkspace.json
           environment: 'Azure Public'
           resourceGroup: 'kyiwasa-github-actions'  ## target resource group
-          clientId: '1ccb6c14-888e-4cf7-9000-d9f41f03523f'
-          clientSecret: 'Mne8Q~EAkiaaAiW2hdgm5OhpTxrglHaHxeah3b6f'
+          clientId: ${{env.CLIENT_ID}}
+          clientSecret: ${{env.CLIENT_SECRET}}
           subscriptionId: ${{env.SUBSCRIPTION_ID}} ## target subscription ID
           tenantId: ${{env.TENANT_ID}}
           operation: 'deploy'
@@ -35,3 +36,8 @@ jobs:
           ArtifactsFolder: './'
           operation: 'validate'
 
+      - name: Log into Azure
+        uses: azure/login@v1
+        with:
+          creds: '{"clientId":"${{env.CLIENT_ID}}","clientSecret":"${{env.CLIENT_SECRET}}","subscriptionId":"${{env.SUBSCRIPTION_ID}}","tenantId":"${{env.TENANT_ID}}"}'
+          enable-AzPSSession: true

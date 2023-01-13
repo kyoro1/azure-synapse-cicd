@@ -41,3 +41,12 @@ jobs:
         with:
           creds: '{"clientId":"${{env.CLIENT_ID}}","clientSecret":"${{env.CLIENT_SECRET}}","subscriptionId":"${{env.SUBSCRIPTION_ID}}","tenantId":"${{env.TENANT_ID}}"}'
           enable-AzPSSession: true
+
+      - name: Trigger Synapse Pipeline
+        uses: azure/powershell@v1
+        with:
+          inlineScript: |
+            Install-Module Az.Synapse -Repository PSGallery -Force
+            Select-AzSubscription -SubscriptionName "ME-MngEnv708172-kyiwasak"
+            Invoke-AzSynapsePipeline -WorkspaceName kyiwasak-github-actions -PipelineName "test-pipeline"
+          azPSVersion: "latest"  

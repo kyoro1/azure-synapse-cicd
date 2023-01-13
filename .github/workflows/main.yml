@@ -32,6 +32,6 @@ jobs:
       - uses: azure/synapse-workspace-deployment@release-1.7.0
         with:
           TargetWorkspaceName: 'kyiwasak-github-actions-123'  ## target synapse workspace
-          ArtifactsFolder: './RootFolder'
+          ArtifactsFolder: './'
           operation: 'validate'
 

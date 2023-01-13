@@ -6,13 +6,17 @@ on:
 
 env:
   SUBSCRIPTION_ID: e9b02ef2-7153-4301-9716-f2f328b39811
+  TENANT_ID: 2c07d0a7-0d73-4574-a9c5-277f9cda9bb4
+
 
 jobs:
   validate-synapse-pipeline:
     runs-on: ubuntu-latest
     steps:
+      ## Checkout of repository
       - uses: actions/checkout@v2
-      - uses: azure/synapse-workspace-deployment@release-1.0
+      ## Deployment of Azure Synapse workspace into another
+      - uses: azure/synapse-workspace-deployment@release-1.7.0
         with:
           TargetWorkspaceName: 'kyiwasak-github-actions-123'  ## target synapse workspace
           TemplateFile: ./kyiwasak-github-actions/TemplateForWorkspace.json
@@ -22,4 +26,12 @@ jobs:
           clientId: '1ccb6c14-888e-4cf7-9000-d9f41f03523f'
           clientSecret: 'Mne8Q~EAkiaaAiW2hdgm5OhpTxrglHaHxeah3b6f'
           subscriptionId: ${{env.SUBSCRIPTION_ID}} ## target subscription ID
-          tenantId: '2c07d0a7-0d73-4574-a9c5-277f9cda9bb4'
+          tenantId: ${{env.TENANT_ID}}
+          operation: 'deploy'
+
+      - uses: azure/synapse-workspace-deployment@release-1.7.0
+        with:
+          TargetWorkspaceName: 'kyiwasak-github-actions-123'  ## target synapse workspace
+          ArtifactsFolder: './RootFolder'
+          operation: 'validate'
+

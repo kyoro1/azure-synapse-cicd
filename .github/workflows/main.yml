@@ -21,5 +21,5 @@ jobs:
           resourceGroup: 'kyiwasa-github-actions'  ## target resource group
           clientId: '1ccb6c14-888e-4cf7-9000-d9f41f03523f'
           clientSecret: 'Mne8Q~EAkiaaAiW2hdgm5OhpTxrglHaHxeah3b6f'
-          subscriptionId: ${env.SUBSCRIPTION_ID} ## target subscription ID
+          subscriptionId: ${{env.SUBSCRIPTION_ID}} ## target subscription ID
           tenantId: '2c07d0a7-0d73-4574-a9c5-277f9cda9bb4'
